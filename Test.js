@@ -21,6 +21,10 @@ return {
     replaceAllCaseSensitive: replceString.replaceAll("cow","dog",true),
     removeSubsString:replceString.removeSubsString("dog"),
     removeSubsStringCaseSensitive:replceString.removeSubsString("dog",true),
+    removeByStatingIndexNumer: replceString.removeByForwardingIndexNumerAndLength(12),
+    removeByStatingIndexNumerAndLength: replceString.removeByForwardingIndexNumerAndLength(12,6),
+    removeByBackwardingIndexNumer: replceString.removeByBackwardingIndexNumerAndLength(3),
+    removeByBackwardingIndexNumerAndLength: replceString.removeByBackwardingIndexNumerAndLength(3,4),
 }
 }();
 

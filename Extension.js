@@ -53,5 +53,25 @@ String.method('removeSubsString', function (value,isCaseSensitive) {
             return this.replaceAll(value," ",isCaseSensitive);
         });
 
+String.method('removeByForwardingIndexNumerAndLength', function (startIndex,length) {
+             var s = '';
+             if (startIndex > 0)
+                s = this.substring(0, startIndex);
+
+             if ((typeof length != 'undefined') && (startIndex + length < this.length))
+                s += this.substring(startIndex + length, this.length);
+             return s;
+        });
+
+
+String.method('removeByBackwardingIndexNumerAndLength', function (backIndex,length) {
+             var s = '';
+             if (backIndex > 0)
+                s = this.substring(this.length-backIndex, this.length);
+
+             if ((typeof length != 'undefined') && (0 < this.length-backIndex-length))
+                s = this.substring(0, this.length-backIndex-length)+s;
+             return s;
+        });
 
 
