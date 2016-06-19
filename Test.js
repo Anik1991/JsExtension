@@ -6,6 +6,7 @@
 var demo=function(){
 var trimString = "          hello this //nice world           ";
 var formateString="Hi {0} good{1}";
+var replceString="Cow cow cow dog Dog dog";
 
 return {
     trimString:trimString,
@@ -15,6 +16,11 @@ return {
     formateString:formateString,
     format:formateString.format("anik","morning"),
     reverse:trimString.reverse(),
+    replceString: replceString,
+    replaceAll: replceString.replaceAll("cow","dog"),
+    replaceAllCaseSensitive: replceString.replaceAll("cow","dog",true),
+    removeSubsString:replceString.removeSubsString("dog"),
+    removeSubsStringCaseSensitive:replceString.removeSubsString("dog",true),
 }
 }();
 

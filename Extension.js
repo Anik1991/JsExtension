@@ -29,14 +29,29 @@ String.method('format', function () {
         var tokenCount = arguments.length-1;
         for (var token = 0; token <= tokenCount; token++) {
                 //We iterate through the text tokens and replace their spot with arguments
-                text = text.replace(new RegExp("\\{" + token + "\\}", "gi"), arguments[token]);
+                text = text.replace(new RegExp("\\{" + token + "\\}", "g"), arguments[token]);
                 }
         return text;
 
         });
 
-String.prototype.reverse = function() { 
-  return this.split('').reverse().join('');
-};
+
+String.method('reverse', function () {
+            return this.split('').reverse().join('');
+        });
+
+String.method('replaceAll', function (oldValue, newValue,isCaseSensitive) {
+            var flags="g";
+            if((typeof isCaseSensitive == 'undefined')||(isCaseSensitive==false))
+            {
+                    flags=flags+"i";
+            }
+            return this.replace(new RegExp(oldValue, flags), newValue);
+        });
+
+String.method('removeSubsString', function (value,isCaseSensitive) {
+            return this.replaceAll(value," ",isCaseSensitive);
+        });
+
 
 
