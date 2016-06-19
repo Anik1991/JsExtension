@@ -6,7 +6,7 @@
 var demo=function(){
 var trimString = "          hello this //nice world           ";
 var formateString="Hi {0} good{1}";
-var replceString="Cow cow cow dog Dog dog";
+var replceString="Cow cow cow dog Dog dog fog fog";
 
 return {
     trimString:trimString,
@@ -25,6 +25,8 @@ return {
     removeByStatingIndexNumerAndLength: replceString.removeByForwardingIndexNumerAndLength(12,6),
     removeByBackwardingIndexNumer: replceString.removeByBackwardingIndexNumerAndLength(3),
     removeByBackwardingIndexNumerAndLength: replceString.removeByBackwardingIndexNumerAndLength(3,4),
+    contains: replceString.contains("fog"),
+    containsCaseSensitive: replceString.contains("Fog",true),
 }
 }();
 

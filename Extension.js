@@ -74,4 +74,13 @@ String.method('removeByBackwardingIndexNumerAndLength', function (backIndex,leng
              return s;
         });
 
+String.method('contains', function(text, isCaseSensitive) {
+            var flags="g";
+            if((typeof isCaseSensitive == 'undefined')||(isCaseSensitive==false))
+            {
+                    flags=flags+"i";
+            }
+        return !!(new RegExp(text,flags).test(this));
+});
+
 
