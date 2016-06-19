@@ -20,6 +20,23 @@ String.method('trimStart', function () {
             return this.replace(/^\s+/, '');; 
         });
 
+String.method('format', function () {
+        if (arguments.length < 1) {
+                //If only one parameter, we can return when as there is nothing to format
+                return this;
+                }
+        var text=this;
+        var tokenCount = arguments.length-1;
+        for (var token = 0; token <= tokenCount; token++) {
+                //We iterate through the text tokens and replace their spot with arguments
+                text = text.replace(new RegExp("\\{" + token + "\\}", "gi"), arguments[token]);
+                }
+        return text;
 
+        });
+
+String.prototype.reverse = function() { 
+  return this.split('').reverse().join('');
+};
 
 

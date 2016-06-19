@@ -5,12 +5,16 @@
 
 var demo=function(){
 var trimString = "          hello this //nice world           ";
+var formateString="Hi {0} good{1}";
 
 return {
     trimString:trimString,
     trim : trimString.trim(),
     trimEnd:trimString.trimEnd(),
     trimStart:trimString.trimStart(),
+    formateString:formateString,
+    format:formateString.format("anik","morning"),
+    reverse:trimString.reverse(),
 }
 }();
 
